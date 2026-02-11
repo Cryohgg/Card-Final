@@ -38,38 +38,20 @@ Halo bott!!! Hmm.. harusnya sekarang jumat malem, bener gaa?? First of all, I MA
       className="relative h-screen w-screen overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth bg-gradient-to-b from-rose-50 via-pink-50 to-rose-100"
       style={{ WebkitOverflowScrolling: "touch" }}
     >
-      {/* Floating Hearts */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        {[...Array(10)].map((_, i) => (
-          <motion.div
-            key={i}
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: "-10%", opacity: [0, 0.6, 0] }}
-            transition={{ duration: 8 + i, repeat: Infinity, delay: i * 0.5 }}
-            className="absolute text-rose-300 text-xl"
-            style={{ left: `${Math.random() * 100}%` }}
-          >
-            ❤
-          </motion.div>
-        ))}
-      </div>
-
       {/* SECTION 1 */}
-      <section className="min-h-screen flex items-center justify-center snap-start px-6 py-16 text-center">
-        <div>
-          <h1
-            className="text-4xl sm:text-5xl text-rose-600"
-            style={{ fontFamily: "'Great Vibes', cursive" }}
-          >
-            For My Special One 💕
-          </h1>
-          <p className="mt-6 text-rose-500 italic">Swipe Up Bott!!</p>
-        </div>
+      <section className="min-h-screen w-full flex flex-col justify-center snap-start px-6 py-24 text-center">
+        <h1
+          className="text-4xl sm:text-5xl text-rose-600"
+          style={{ fontFamily: "'Great Vibes', cursive" }}
+        >
+          For My Special One 💕
+        </h1>
+        <p className="mt-6 text-rose-500 italic">Swipe Up Bott!!</p>
       </section>
 
-      {/* SECTION 2 */}
-      <section className="min-h-screen flex items-center justify-center snap-start px-6 py-16">
-        <div className="max-w-3xl bg-white/90 p-6 sm:p-8 rounded-3xl shadow-2xl">
+      {/* SECTION 2 - LETTER */}
+      <section className="min-h-screen w-full flex flex-col justify-center snap-start px-6 py-24">
+        <div className="max-w-3xl mx-auto bg-white/95 p-8 rounded-3xl shadow-2xl">
           <h2
             className="text-3xl sm:text-4xl text-rose-500 mb-6 text-center"
             style={{ fontFamily: "'Great Vibes', cursive" }}
@@ -83,8 +65,8 @@ Halo bott!!! Hmm.. harusnya sekarang jumat malem, bener gaa?? First of all, I MA
       </section>
 
       {/* SECTION 3 - GALLERY */}
-      <section className="min-h-screen flex items-center justify-center snap-start px-6 py-16">
-        <div className="max-w-6xl bg-white/90 p-6 sm:p-8 rounded-3xl shadow-2xl">
+      <section className="min-h-screen w-full flex flex-col justify-center snap-start px-6 py-24">
+        <div className="max-w-6xl mx-auto bg-white/95 p-8 rounded-3xl shadow-2xl">
           <h2
             className="text-3xl sm:text-4xl text-rose-500 mb-10 text-center"
             style={{ fontFamily: "'Great Vibes', cursive" }}
@@ -109,37 +91,55 @@ Halo bott!!! Hmm.. harusnya sekarang jumat malem, bener gaa?? First of all, I MA
         </div>
       </section>
 
-      {/* SECTION 4 */}
-      <section className="min-h-screen flex items-center justify-center snap-start px-6 py-16 text-center">
-        <div>
-          <h2
-            className="text-3xl sm:text-4xl text-rose-600 mb-8"
-            style={{ fontFamily: "'Great Vibes', cursive" }}
-          >
-            Will You Be My Girlfriend? 💖
-          </h2>
+      {/* SECTION 4 - QUESTION */}
+      <section className="min-h-screen w-full flex flex-col justify-center snap-start px-6 py-24 text-center">
+        <h2
+          className="text-3xl sm:text-4xl text-rose-600 mb-8"
+          style={{ fontFamily: "'Great Vibes', cursive" }}
+        >
+          Will You Be My Girlfriend? 💖
+        </h2>
 
-          {!answer && (
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <motion.button
-                animate={{
-                  boxShadow: [
-                    "0 0 0px rgba(244,63,94,0.4)",
-                    "0 0 25px rgba(244,63,94,0.8)",
-                    "0 0 0px rgba(244,63,94,0.4)"
-                  ],
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-                onClick={handleYesClick}
-                className="w-48 text-lg py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-2xl"
-              >
-                Yes 💖
-              </motion.button>
+        {!answer && (
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <motion.button
+              animate={{
+                boxShadow: [
+                  "0 0 0px rgba(244,63,94,0.4)",
+                  "0 0 25px rgba(244,63,94,0.8)",
+                  "0 0 0px rgba(244,63,94,0.4)"
+                ],
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+              onClick={handleYesClick}
+              className="w-48 text-lg py-4 bg-rose-500 hover:bg-rose-600 text-white rounded-2xl"
+            >
+              Yes 💖
+            </motion.button>
 
-              <motion.button
-                animate={{ x: thinkPosition.x, y: thinkPosition.y }}
-                transition={{ type: "spring", stiffness: 300 }}
-                onClick={handleThinkClick}
-                className="w-48 text-lg py-4 border border-rose-400 rounded-2xl"
-              >
-                Let Me
+            <motion.button
+              animate={{ x: thinkPosition.x, y: thinkPosition.y }}
+              transition={{ type: "spring", stiffness: 300 }}
+              onClick={handleThinkClick}
+              className="w-48 text-lg py-4 border border-rose-400 rounded-2xl"
+            >
+              Let Me Think 😳
+            </motion.button>
+          </div>
+        )}
+
+        {answer === "yes" && (
+          <p className="mt-8 text-xl sm:text-2xl text-rose-600 font-semibold">
+            You just made me the happiest person alive 🥹💞
+          </p>
+        )}
+
+        {answer === "thinking" && (
+          <p className="mt-8 text-lg italic text-gray-600">
+            I'll Respect Your Decision, Makasii Yaa
+          </p>
+        )}
+      </section>
+    </div>
+  );
+}
