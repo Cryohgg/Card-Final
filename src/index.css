@@ -10,3 +10,10 @@ html, body, #root {
 body {
   font-family: 'Playfair Display', serif;
 }
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  touch-action: manipulation;
+}
